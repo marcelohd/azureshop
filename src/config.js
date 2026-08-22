@@ -4,7 +4,7 @@ require('dotenv').config();
 const root = path.resolve(__dirname, '..');
 
 module.exports = {
-  port: Number(process.env.PORT || 3000),
+  port: isNaN(process.env.PORT) ? process.env.PORT : Number(process.env.PORT || 3000),
   environment: process.env.APP_ENV || 'development',
   dbProvider: process.env.DB_PROVIDER || 'sqlite',
   sqlitePath: path.resolve(root, process.env.SQLITE_PATH || './data/loja.db'),
