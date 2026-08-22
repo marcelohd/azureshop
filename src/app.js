@@ -15,7 +15,7 @@ function createApp(repository) {
   app.get('/api/health', async (_req, res) => {
     try {
       await repository.health();
-      res.json({ status: 'ok', application: 'Imersão Arquiteto Azure — Cloud & AI', database: repository.provider, ai: config.aiEnabled });
+      res.json({ status: 'ok', application: 'Imersão Arquiteto Azure — Cloud & AI - Antigravity - Marcelo H', database: repository.provider, ai: config.aiEnabled });
     } catch { res.status(503).json({ status: 'unhealthy' }); }
   });
   app.get('/api/products', async (_req, res, next) => {
